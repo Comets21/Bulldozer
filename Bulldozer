@@ -1,0 +1,43 @@
+#include <kipr/botball.h>
+
+int main()
+{
+    motor(0,100);
+    motor(1,-100);
+    msleep(400);
+    motor(0,-100);
+    motor(1,-100);
+    msleep(4700);
+    motor(0,-100);
+    motor(1, 90);
+    msleep(400);
+    motor(0,-100);
+    motor(1,-100);
+    msleep(500);
+    motor(0,-100);
+    motor(1,90);
+    msleep(400);
+    ao();
+    msleep(2000);
+        while (analog(1) < 2000)
+    {
+        if (analog(0) > 1000)
+        {
+            motor(0, -10);
+            motor(1, -100);
+        }
+        else
+        {
+            motor(0, -100);
+            motor(1, -10);
+        }
+    }
+    ao();
+    motor(0, -50);
+    motor(1, 50);
+    msleep(1750);
+    motor(0, -100);
+    motor(1, -100);
+    msleep(3000);
+        return 0;
+}
